@@ -28,3 +28,8 @@ jobs:
           npm run build:firefox
           npm run zip
 
+      - name: Upload artifact containing Firefox and Chrome packages
+        uses: actions/upload-artifact@v4
+        with:
+          name: FirefoxAndChromePackages
+          path: build/

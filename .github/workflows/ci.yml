@@ -29,12 +29,15 @@ jobs:
           npm run zip
           npm run zip:firefox
 
-      - name: Upload artifact containing Firefox and Chrome packages
+      - name: Upload artifact containing Chrome packages
         uses: actions/upload-artifact@v4
         with:
-          name: FirefoxAndChromePackages
-          path: |
-            .output/chrome-mv3
-            .output/firefox-mv3
-            .output/*.zip
+          name: ChromePackages
+          path: .output/addon-background-color-0.0.1-chrome.zip
 
+      - name: Upload artifact containing Firefox packages
+        uses: actions/upload-artifact@v4
+        with:
+          name: FirefoxPackages
+          path: |
+            .output/addon-background-color-0.0.1-firefox.zip
